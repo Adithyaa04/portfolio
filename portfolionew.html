@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+        body {
+            background-color: #121212;
+            color: #e5e5e5;
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #1a1a1a;
+            padding: 20px;
+            border-bottom: 2px solid #b5a37f;
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #b5a37f;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e5e5e5;
+            font-size: 1.2rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #b5a37f;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #b5a37f;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            color: #e5e5e5;
+            margin: 20px;
+        }
+
+        .project {
+            background: #1a1a1a;
+            border: 1px solid #b5a37f;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(181, 163, 127, 0.2);
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #b5a37f;
+        }
+
+        .education, .skills {
+            background: #1a1a1a;
+            border: 1px solid #b5a37f;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0 4px 8px rgba(181, 163, 127, 0.2);
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Adithya Vijay</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-content">Hi, I'm Adithya Vijay, a Computer Science freshman with a strong passion for technology and problem-solving. Currently exploring various aspects of software development, algorithms, and data structures.</p>
+        <p class="section-content">I am keen to learn and apply new skills in coding, development frameworks, and systems design. I enjoy tackling complex challenges and am actively involved in projects that allow me to grow both technically and creatively.</p>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p class="section-content">NSS College of Engineering Palakkad(2024 - Present)</p>
+            <p class="section-content">Bishop Hodges Higher Secondary School(2021 - 2023)</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills">
+            <h3>Programming Languages:</h3>
+            <p class="section-content">Python, C, C++, JavaScript, HTML,</p>
+
+            <h3>Tools & Technologies:</h3>
+            <p class="section-content">Git, GitHub, VS Code, MySQL</p>
+
+            <h3>Web Development:</h3>
+            <p class="section-content">HTML, CSS, JavaScript, React</p>
+
+            <h3>Other Skills:</h3>
+            <p class="section-content">Problem Solving, Algorithms, Data Structures, Machine Learning Basics</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project">
+            <h3 class="project-title">Mathematical Visualisation tool using MANIM</h3>
+            <p>A web-based tool that converts user-input mathematical prompts into Manim-generated animations using an AI model.</p>
+            <p> It helps visualize complex mathematical concepts dynamically and interactively.</p>
+        </div>
+        
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-content">Email: adithyavijay04@gmail.com</p>
+        <p class="section-content">LinkedIn: <a href="https://www.linkedin.com" target="_blank" style="color: #b5a37f;">https://www.linkedin.com/in/adithya-vijay-870365329/</a></p>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section-title, .project, .education, .skills");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = "translateY(0) scale(1)";
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
